@@ -6,14 +6,17 @@ import { Sidebar } from "./Sidebar"
 const Inicio = () => {
   let code = window.location.search.split("=")[1];
   const [token, setToken] = useState(null);
-  const [tracks, setTracks] = useState([]);
 
   const backHome = (link) => {
     window.location.href = link;
   };
 
   useEffect(() => {
-    if (token == null) getToken(code).then(setToken);
+    console.log({token, code})
+    if (token == null || token === undefined) {
+      console.log("Obtener token")
+      getToken(code).then(setToken)
+    } 
   }, [code, token]);
 
   return (

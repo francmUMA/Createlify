@@ -15,7 +15,7 @@ export const Sidebar = (props) => {
         {playlists.map((playlist) => {
           return (
             <>
-              <li>{playlist.name}</li>
+              <li key={playlist.id}>{playlist.name}</li>
             </>
           );
         })}
