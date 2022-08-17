@@ -1,23 +1,24 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar.js";
 import { getToken } from "../services/token.js"
 import { Sidebar } from "./Sidebar"
 
 const Inicio = () => {
-  let code = window.location.search.split("=")[1];
-  const [token, setToken] = useState(null);
+  let code = window.location.search.split("=")[1]
+  const [token, setToken] = useState(null)
 
   const backHome = (link) => {
-    window.location.href = link;
-  };
+    window.location.href = link
+  }
+
+  window.location.reload()
 
   useEffect(() => {
-    console.log({token, code})
     if (token == null || token === undefined) {
       console.log("Obtener token")
       getToken(code).then(setToken)
     } 
-  }, [code, token]);
+  }, [code, token])
 
   return (
     <div id="main">
