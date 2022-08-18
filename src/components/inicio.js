@@ -11,11 +11,8 @@ const Inicio = () => {
     window.location.href = link
   }
 
-  window.location.reload()
-
   useEffect(() => {
     if (token == null || token === undefined) {
-      console.log("Obtener token")
       getToken(code).then(setToken)
     } 
   }, [code, token])

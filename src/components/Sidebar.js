@@ -1,12 +1,14 @@
-import { getPlaylists } from "../services/playlists";
+import { getAllArtistTracks } from "../services/tracks";
 import { useState, useEffect } from "react";
 
 export const Sidebar = (props) => {
     const [playlists, setPlaylists] = useState([]);
 
     useEffect(() => {
-        if (props.token != null) {
-          getPlaylists(props.token).then(setPlaylists);
+        if (props.token != null && props.token !== undefined) {
+          getAllArtistTracks(props.token, "4f0OXMMSxr0r8Ztx6CdpAl").then(tracks => {
+            setPlaylists(tracks)
+          });
         }
       }, [props.token]);
 
@@ -15,7 +17,7 @@ export const Sidebar = (props) => {
         {playlists.map((playlist) => {
           return (
             <>
-              <li key={playlist.id}>{playlist.name}</li>
+              <li>{playlist.name}</li>
             </>
           );
         })}

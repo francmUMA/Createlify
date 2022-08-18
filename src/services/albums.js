@@ -10,7 +10,7 @@ export const getAllAlbums = async (token, artistID) => {
   let allData = [];
   let offset = 0;
   let res = await fetch(
-    sp.baseURI + "artists/" + artistID + "/albums?include_groups=single%2C%20album?limit=50&offset=" + offset,
+    sp.baseURI + "/artists/" + artistID + "/albums?include_groups=album%2Csingle&market=ES&limit=50&offset=" + offset,
     options(token)
   )
     .then((response) => response.json())
@@ -23,7 +23,7 @@ export const getAllAlbums = async (token, artistID) => {
   while (res.total > allData.length) {
     offset += 50;
     res = await fetch(
-      sp.baseURI + "artists/" + artistID + "/albums?include_groups=single%2C%20album?limit=50&offset=" + offset,
+      sp.baseURI + "/artists/" + artistID + "/albums?include_groups=album%2Csingle&market=ES&limit=50&offset=" + offset,
       options(token)
     )
       .then((response) => response.json())
