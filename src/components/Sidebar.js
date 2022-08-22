@@ -1,4 +1,5 @@
-import { getAllArtistTracks } from "../services/tracks";
+//import { getPlaylists } from "../services/playlists";
+import { playlistAllTracksArtists } from "../services/misc";
 import { useState, useEffect } from "react";
 
 export const Sidebar = (props) => {
@@ -6,9 +7,22 @@ export const Sidebar = (props) => {
 
     useEffect(() => {
         if (props.token != null && props.token !== undefined) {
-          getAllArtistTracks(props.token, "4f0OXMMSxr0r8Ztx6CdpAl").then(tracks => {
-            setPlaylists(tracks)
-          });
+          //getPlaylists(props.token).then(setPlaylists)
+          playlistAllTracksArtists(props.token, "150 octubre", "Realizada con javascript", false, [
+            "Ran-D", 
+            "Sub Zero Project", 
+            "Dblock Stefan", 
+            "The Prophet",
+            "JNXD",
+            "Hard Driver",
+            "Remzcore",
+            "Physika",
+            "Ncrypta",
+            "Sub Sonik",
+            "Lunakorpz"
+          ]).then(data => {
+            setPlaylists(data)
+          })
         }
       }, [props.token]);
 

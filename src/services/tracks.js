@@ -1,19 +1,22 @@
 import { getAlbumTracks, getAllAlbums } from "./albums"
 
+//@params token: string, artistID: [string]
+
 export const getAllArtistTracks = async (token, artists) => {
     let tracklist = []
-    artists.forEach(async artistID => {
+    for (const artistID of artists) {
         let albumList = await getAllAlbums(token, artistID)
-        albumList.forEach(async album => {
+        for (const album of albumList) {
             let albumTracks = await getAlbumTracks(token, album.id)
-            albumTracks.forEach(track => {
+            console.log(albumTracks)
+            for (const track of albumTracks) {
                 tracklist.push({
                     id: track.id,
                     name: track.name,
                     uri: track.uri
                 })
-            })
-        })
-    })
+            }
+        }
+    }
     return tracklist
 }

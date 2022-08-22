@@ -2,7 +2,6 @@ import { getUserID } from "./user";
 import { SPOTIFY as sp, options } from "../.env";
 
 export const createPlaylist = async (token, playlistName, playlistDescription, playlistType) => {
-    let useToken = token;
     let userID = await getUserID(token);
   
     return await fetch(sp.baseURI + "/users/" + userID + "/playlists", {
@@ -82,11 +81,11 @@ export const addTracksPlaylist = async (token, tracklist, playlistID) => {
       for (let i = auxTracklist.length; i < auxValue; i++) {
         auxTracklist.push(tracklist[i])
       }
-      fetch(sp.baseURI + "/playlists/" + playlistID  + "/tracks?uris=" + auxTracklist)
+      fetch(sp.baseURI + "/playlists/" + playlistID  + "/tracks?uris=" + auxTracklist, optionsPost)
     }
   } else {
-    fetch(sp.baseURI + "/playlists/" + playlistID  + "/tracks?uris=" + tracklist).then((response) => {
-      if (response.status == 201) {
+    fetch(sp.baseURI + "/playlists/" + playlistID  + "/tracks?uris=" + tracklist, optionsPost).then((response) => {
+      if (response.status === 201) {
         console.log("Tracklist añadido correctamente")
       } else {
         console.log("No se ha podido añadir la tracklist")

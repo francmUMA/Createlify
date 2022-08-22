@@ -16,10 +16,10 @@ export const getAllAlbums = async (token, artistID) => {
     .then((response) => response.json())
     .then((json) => {
       return json;
-    });
-  res.items.forEach((element) => {
-    allData.push(element);
-  });
+    })
+  for (const element of res.items) {
+    allData.push(element)
+  }
   while (res.total > allData.length) {
     offset += 50;
     res = await fetch(
@@ -30,9 +30,9 @@ export const getAllAlbums = async (token, artistID) => {
       .then((json) => {
         return json;
       });
-    res.items.forEach((element) => {
-      allData.push(element);
-    });
+    for (const element of res.items) {
+      allData.push(element)
+    }
   }
   return allData;
 };
