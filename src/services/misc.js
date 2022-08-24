@@ -12,7 +12,6 @@ export const playlistAllTracksArtists = async (token, name, description, type, a
     
     //2. Sacar las canciones de cada uno de los artistas
     let tracklist = await getAllArtistTracks(token, artistListIDs)
-    console.log(tracklist)
 /*
     //3. Crear la playlist
     let playlistID = await createPlaylist(token, name, description, type)

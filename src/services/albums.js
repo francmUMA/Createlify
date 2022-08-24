@@ -1,9 +1,12 @@
 import { SPOTIFY as sp, options } from "../.env";
 
-export const getAlbumTracks = async (token, albumID) => {
-    return fetch(sp.baseURI + "/albums/" + albumID + "/tracks?limit=50", options(token))
+export const getAlbumTracks = async (token, albumsIDs) => {
+    return fetch(sp.baseURI + "/albums?ids=" + albumsIDs + "&market=ES", options(token))
       .then((response) => response.json())
-      .then((items) => items.items);
+      .then((items) => {
+        console.log(items)
+        return items
+      });
 };
 
 export const getAllAlbums = async (token, artistID) => {

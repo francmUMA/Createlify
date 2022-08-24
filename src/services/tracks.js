@@ -6,16 +6,15 @@ export const getAllArtistTracks = async (token, artists) => {
     let tracklist = []
     for (const artistID of artists) {
         let albumList = await getAllAlbums(token, artistID)
-        for (const album of albumList) {
-            let albumTracks = await getAlbumTracks(token, album.id)
-            console.log(albumTracks)
-            for (const track of albumTracks) {
-                tracklist.push({
-                    id: track.id,
-                    name: track.name,
-                    uri: track.uri
-                })
-            }
+        
+        //Pasar listas de tamaño 20
+        let albumTracks = await getAlbumTracks(token, albumList)
+        for (const track of albumTracks) {
+            tracklist.push({
+                id: track.id,
+                name: track.name,
+                uri: track.uri
+            })
         }
     }
     return tracklist
