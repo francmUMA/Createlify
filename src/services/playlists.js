@@ -71,20 +71,23 @@ export const addTracksPlaylist = async (token, tracklist, playlistID) => {
   if (tracklist.length > 100) {
     let auxTracklist = []
     let auxValue
+    let cont = 0;
     
-    while (auxTracklist.length < tracklist.length){
-      if (tracklist.length - auxTracklist.length < 100) {
-        auxValue = tracklist.length - auxTracklist.length
+    while (cont < tracklist.length){
+      if (tracklist.length - cont < 100) {
+        auxValue = tracklist.length
       } else {
-        auxValue = 100;
+        auxValue = cont + 100;
       }
-      for (let i = auxTracklist.length; i < auxValue; i++) {
+      for (let i = cont; i < auxValue; i++) {
         auxTracklist.push(tracklist[i])
       }
-      fetch(sp.baseURI + "/playlists/" + playlistID  + "/tracks?uris=" + auxTracklist, optionsPost)
+      cont += (auxValue - cont)
+      await fetch(sp.baseURI + "/playlists/" + playlistID  + "/tracks?uris=" + auxTracklist, optionsPost)
+      auxTracklist = []
     }
   } else {
-    fetch(sp.baseURI + "/playlists/" + playlistID  + "/tracks?uris=" + tracklist, optionsPost).then((response) => {
+    await fetch(sp.baseURI + "/playlists/" + playlistID  + "/tracks?uris=" + tracklist, optionsPost).then((response) => {
       if (response.status === 201) {
         console.log("Tracklist añadido correctamente")
       } else {

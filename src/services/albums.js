@@ -4,8 +4,7 @@ export const getAlbumTracks = async (token, albumsIDs) => {
     return fetch(sp.baseURI + "/albums?ids=" + albumsIDs + "&market=ES", options(token))
       .then((response) => response.json())
       .then((items) => {
-        console.log(items)
-        return items
+        return items.albums
       });
 };
 

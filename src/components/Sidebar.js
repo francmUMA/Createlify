@@ -8,10 +8,10 @@ export const Sidebar = (props) => {
     useEffect(() => {
         if (props.token != null && props.token !== undefined) {
           //getPlaylists(props.token).then(setPlaylists)
-          playlistAllTracksArtists(props.token, "150 octubre", "Realizada con javascript", false, [
+          playlistAllTracksArtists(props.token, "150 octubre 2.0", "Realizada con javascript", false, [
             "Ran-D", 
             "Sub Zero Project", 
-            "Dblock Stefan", 
+            "D-Block & S-te-Fan", 
             "The Prophet",
             "JNXD",
             "Hard Driver",
