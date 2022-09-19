@@ -1,0 +1,33 @@
+#sntc-button{
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: absolute;
+    left: 19%;
+    width: 55rem;
+}
+
+.sentence{
+    margin-top: 12%;
+    font-size: 58px;
+}
+
+.get-btn,
+.create-btn {
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 22px;
+    font-weight: bold;
+    height: 75px;
+    margin-top: 0%;
+    margin-left: 12%;
+    width: 50%;
+    border-width: 0px;
+    border-radius: 70px;
+    background-color: #1db954;
+  }
+  
+  .get-btn:hover,
+  .create-btn:hover {
+    transition-duration: 0.3s;
+    background-color: #1ed760;
+  }
+ 

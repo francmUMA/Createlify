@@ -13,3 +13,22 @@
   height: 80%;
   font-size: 70px;
 }
+
+.home-btn {
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 22px;
+  font-weight: bold;
+  height: 75px;
+  margin-top: 0%;
+  margin-left: 5%;
+  width: 18%;
+  border-width: 0px;
+  border-radius: 70px;
+  background-color: #1db954;
+}
+
+.home-btn:hover {
+  transition-duration: 0.3s;
+  background-color: #1ed760;
+}

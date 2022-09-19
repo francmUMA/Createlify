@@ -1,37 +1,19 @@
-//import { getPlaylists } from "../services/playlists";
-import { playlistAllTracksArtists } from "../services/misc";
+import { getPlaylists } from "../services/playlists";
 import { useState, useEffect } from "react";
+import "../styles/Sidebar.css"
 
 export const Sidebar = (props) => {
     const [playlists, setPlaylists] = useState([]);
-
     useEffect(() => {
-        if (props.token != null && props.token !== undefined) {
-          //getPlaylists(props.token).then(setPlaylists)
-          playlistAllTracksArtists(props.token, "150 octubre 2.0", "Realizada con javascript", false, [
-            "Ran-D", 
-            "Sub Zero Project", 
-            "D-Block & S-te-Fan", 
-            "The Prophet",
-            "JNXD",
-            "Hard Driver",
-            "Remzcore",
-            "Physika",
-            "Ncrypta",
-            "Sub Sonik",
-            "Lunakorpz"
-          ]).then(data => {
-            setPlaylists(data)
-          })
-        }
-      }, [props.token]);
+      getPlaylists(props.token).then(setPlaylists)
+    }, [props.token])
 
     return (
-      <ul>
+      <ul className="container">
         {playlists.map((playlist) => {
           return (
             <>
-              <li>{playlist.name}</li>
+              <button class="btn-playlist">{playlist.name}</button>
             </>
           );
         })}

@@ -1,0 +1,70 @@
+.container{
+    position: fixed;
+    overflow-y: scroll;
+    top: 7.89%;
+    bottom: -1.7%;
+    left: 0;
+    background-color: #121212;
+    color: white;
+    width: 13%;
+    text-align: center;
+}
+
+.btn-playlist {
+  background-color: #121212;
+  border: 0px;
+  color: rgb(183, 180, 180);
+  font-size: 20px;
+  height: 2.7rem;
+  width: 17rem;
+  margin-right: 1.5rem;
+  transition-duration: 0.15s;
+  font-weight: lighter;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+  
+.btn-playlist:hover {
+    transition-duration: 0.15s;
+    color: white;
+  }
+::-webkit-scrollbar {
+  background-color: #121212;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #272727;
+  transition-duration: 0.15s;
+}
+
+::-webkit-scrollbar-thumb:hover{ 
+  background-color: #464646;
+  transition-duration: 0.15s;
+}
+
+.container:before{
+  content: '';
+    position: fixed;
+    top: 9.51%; left: 0;
+    width: 14.55%;
+    height: 20px;
+    background: linear-gradient(
+        rgb(5, 5, 5),
+        rgba(144, 143, 143, 0)
+    );
+}
+
+.container:after{
+  content: '';
+    position: fixed;
+    bottom: 0%;
+    left: 0;
+    width: 14.55%;
+    height: 20px;
+    background: linear-gradient(
+        rgba(144, 143, 143, 0),
+        rgb(5, 5, 5)
+    );
+}
