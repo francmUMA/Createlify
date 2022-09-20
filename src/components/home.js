@@ -9,13 +9,13 @@ const Home = () => {
 
   return (
     <div id="main">
-      <Navbar />
+      <Navbar btn1="How it works" btn2="About" user=""/>
       <div id="login-body">
         <h1 className="description">
           Make personalized playlists with your favourite artists, songs or
           discover new music with playlists based on your musical tastes.
         </h1>
-        <button onClick={login} className="spotify-btn">
+        <button onClick={login} className="home-btn">
           LETS DISCOVER
         </button>
       </div>

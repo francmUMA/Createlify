@@ -10,3 +10,14 @@ export const getUserID = async (token) => {
         }
         );
 }
+
+export const getUserInfo = async (token) => {
+    return fetch(sp.baseURI + "/me", options(token))
+        .then((response) => response.json())
+        .then((json) => {
+            return json;
+        }).catch((error) => {
+            console.log(error);
+        }
+        );
+}

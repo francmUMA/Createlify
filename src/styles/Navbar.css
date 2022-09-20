@@ -8,6 +8,7 @@
     background-color: black;
     align-items: center;
     display: flex;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   
   .spotify-logo {
@@ -16,49 +17,33 @@
     height: auto;
   }
   
-  .about-btn {
+  .btn1{
+    background-color: black;
+    color: white;
+    font-size: 27px;
+    margin-left: 82%;
+    width: 4rem;
+    transition-duration: 0.15s;
+    font-weight: lighter;
+  }
+
+  .btn2{
     background-color: black;
     color: white;
     font-size: 25px;
-    height: 100%;
-    width: 6rem;
+    width: 4rem;
     transition-duration: 0.15s;
     font-weight: lighter;
   }
   
-  .works-btn {
-    background-color: black;
-    color: white;
-    font-size: 25px;
-    height: 100%;
-    width: 11rem;
-    transition-duration: 0.15s;
-    margin-left: 75%;
+  .show-user{
     font-weight: lighter;
+    margin-left: 0.5%;
+    font-size: 25px;
+    text-align: center;
   }
   
-  .about-btn:hover,
-  .works-btn:hover {
+  .btn1:hover, .btn2:hover {
     transition-duration: 0.15s;
     color: #1ed760;
   }
-  
-  .spotify-btn {
-    color: white;
-    transition-duration: 0.3s;
-    font-size: 22px;
-    font-weight: bold;
-    height: 75px;
-    margin-top: 1%;
-    margin-left: 5%;
-    width: 20%;
-    border-width: 0px;
-    border-radius: 70px;
-    background-color: #1db954;
-  }
-  
-  .spotify-btn:hover {
-    transition-duration: 0.3s;
-    background-color: #1ed760;
-  }
-  
