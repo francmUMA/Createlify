@@ -1,5 +1,13 @@
 import "../styles/Navbar.css";
 
+const killSession = () => {
+  window.location.href = "https://accounts.spotify.com/logout"
+}
+
+const goHome = () => {
+  window.location.href = "http://localhost:3000/"
+}
+
 const Navbar = (props) => {
   return (
     <div id="navbar">
@@ -8,8 +16,8 @@ const Navbar = (props) => {
         className="spotify-logo"
         src={require("../images/Spotify_Logo_RGB_White.png")}
       />
-      <button className="btn1">{props.btn1}</button>
-      <button className="btn2">{props.btn2}</button>
+      <button onClick={goHome} className="btn1">{props.btn1}</button>
+      <button onClick={killSession} className="btn2">{props.btn2}</button>
       <p className="show-user">{props.user}</p>
     </div>
   );
