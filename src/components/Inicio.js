@@ -42,6 +42,7 @@ const Inicio = () => {
       <Navbar btn1={<BsHouseDoorFill/>} btn2={<GiPowerButton/>} user={user.display_name}/>
       <Sidebar token={token} />
       <ShowPlaylist />
+      <Descripcion />
     </div>
   );
 };
